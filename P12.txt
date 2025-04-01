@@ -1,0 +1,8 @@
+echo "Enter FileName : "
+read fileName
+if [ -f $fileName ]
+then
+        echo "Its is odinaryfile $fileName"
+else
+        echo "$fileName this is not ordinaryfile"
+fi

@@ -1,0 +1,39 @@
+echo " 1. Display the content of two file "
+echo " 2. Display the message"
+echo " 3. copy the files "
+read ch
+
+echo "Enter file name"
+read n
+
+echo "Enter copy file name"
+read file
+
+
+case $ch in
+
+        1)cat $n
+          cat $file
+          ;;
+
+        2) echo "Displaying the contents of file "$n
+           cat $n
+
+           echo "Displaying the contents pagewise"
+           cat $n | more
+           ;;
+
+        3) echo "Copying the files"
+           read c
+           echo "Enter a file for copy"
+           read d
+
+          if [ -f $c -a -f $d ]
+          then
+                cp $c $d
+                echo "File copied successfully "
+          else
+                echo "Files not copied successfully"
+          fi
+          ;;
+esac

@@ -1,0 +1,2 @@
+echo "Login names that begin with s : "
+who -H | grep [s]*

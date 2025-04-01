@@ -1,0 +1,13 @@
+d=`date +%H`
+if [ $d -ge 06 -a $d -le 12 ]
+then
+        echo "GoodMorning"
+
+elif [ $d -gt 12 -a $d -le 17 ]
+then
+
+        echo "Good afternoon"
+else
+        echo "good night"
+
+fi

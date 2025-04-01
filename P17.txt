@@ -1,0 +1,9 @@
+read -p "Enter the first filename" fn1
+read -p "Enter the second filename" fn2
+if [ -f $fn1 -a -f $fn2 ]
+then
+        echo "Both files exist"
+        cat $fn2>>$fn1
+else
+        echo "Files does not exist"
+fi

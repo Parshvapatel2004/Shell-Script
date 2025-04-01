@@ -1,0 +1,10 @@
+countx=0
+
+for i in *
+do
+        if [ -x $i ]
+        then
+                countx=`expr $countx + 1`
+        fi
+done
+        echo "Number of executable files are $countx"

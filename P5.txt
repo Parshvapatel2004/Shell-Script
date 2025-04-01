@@ -1,0 +1,24 @@
+echo " 1). create a file called text and store name ,age and address in it."
+echo " 2). Display the contents of the file text on the screen. "
+echo " 3). Delete the directories mydir and newdir at one shot. "
+echo " 4). Sort a nemuric file."
+echo " 5). Change the permissions for the file newtext to 666."
+echo "Enter your choice : "
+read fn
+case $fn in
+
+1) echo "Create a file called text and store name,age and address"
+        echo "Enter filename"
+        read fn
+        cat>$fn;;
+2) echo "Display the contents of the file text on the screen"
+        cat $fn;;
+3) echo "Delete the directiory mydir and newdir at one shot"
+        rmdir mydir newdir ;;
+4) echo "Sort a numeric value"
+        sort -n filename;;
+5) echo "Change the permission for the file newtext to 666."
+        chmod 666 newtext;;
+*) echo "Invalid choice";;
+
+esac

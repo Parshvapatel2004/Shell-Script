@@ -1,0 +1,8 @@
+echo "Enter the filename"
+read fn
+if [ -d $fn ]
+then
+        echo "Its a directiory "ls $fn
+else
+        echo "Its a not directiory"
+fi

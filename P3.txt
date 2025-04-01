@@ -1,0 +1,31 @@
+echo "Choose an option to execute the corresponding task:"
+echo "1. Sort file abc.txt and save this sort file in xyz.txt"
+echo "2. Execute commands together without affecting each other"
+echo "3. Print 'thisis a three-line Textmessage'"
+echo "4. Display version of the Unix"
+echo "5. Get online help for the 'cat' command"
+
+read -p "Enter your choice (1-5): " choice
+case $choice in
+        1)
+                echo "Sorting file abc.txt and saving it to xyz.txt..."
+                sort abc.txt > xyz.txt
+                echo "File sorted and saved in xyz.txt."
+                ;;
+        2)
+                echo "Exexute commands together without affecting each other..."
+                echo "First command executed." ; echo "Second command executed."
+                ;;
+        3)
+                echo "Printing 'thisis a three-line Textmessage':"
+                echo -e "thisis\n a three-line\n Textmessage"
+                ;;
+        4)
+                echo "Displaying version of UNIX..."
+                uname -a
+                ;;
+        5) man cat
+                ;;
+        *)
+          echo "Invalid choice"
+esac

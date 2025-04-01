@@ -1,0 +1,47 @@
+echo "Menu : "
+echo "1). Calander of the current month and year."
+echo "2). Display greeting based on the current time."
+echo "3). Show user Name and home directiory."
+echo "4). Show terminal name and type."
+echo "5). Show machine name."
+echo "6). Show number of logged user and name of user."
+
+read -p "Enter your choice : " choice
+case $choice in
+        1) echo "Calander of the current month and year"
+                cal;;
+        2)
+                d=`date +%H`
+                if [ $d -ge 06 -a $d -le 12 ]
+                then
+
+                        echo "Good Morning"
+
+                elif [ $d -gt 12 -a $d -le 17 ]
+                then
+
+                        echo "Good Afternoon"
+                else
+                        echo "Good night"
+                fi
+                ;;
+        3)
+                echo "UserName: $USER"
+                echo "HomeDirectory: $HOME"
+                ;;
+        4)
+                echo "Terminal Name : $TERM"
+                echo "Terminal Type : $(tty)"
+                ;;
+        5)
+                echo "Matchine name : $(hostname)"
+                ;;
+        6)
+                echo "Number of user currently logged in : $(who | wc -1)"
+                echo "List of users : "
+                who
+                ;;
+        *)
+                echo "Invalid Choice"
+                ;;
+esac

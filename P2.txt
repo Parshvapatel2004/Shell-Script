@@ -1,0 +1,12 @@
+echo "Enter FileName : "
+read fileName
+
+if [ -f $fileName ]
+then  
+        str=`find $fileName`
+        path=`pwd`
+        echo "Full path of file is "$path
+else 
+        echo "file [$fileName] not existing "$pwd
+fi
+

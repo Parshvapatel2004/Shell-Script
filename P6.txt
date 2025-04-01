@@ -1,0 +1,10 @@
+read -p "Enter the filename : " filename
+
+#check if the file exists
+if [ -f "$filename" ]; then
+        echo "The last modification time of '$filename' is : "
+        ls -l $filename | cut -c 52-57
+else
+        echo "The file '$filename' does not exist"
+
+fi

@@ -1,0 +1,44 @@
+echo "Select an option to perform a task : "
+echo "1) Display hidden files"
+echo "2) Delete directory with files"
+echo "3) Interactive copying"
+echo "4) Interactive deletion of files"
+echo "5) exit"
+
+read -p "Enter your choice (1-5) " choice
+case $choice in
+        1)
+                echo "Displaying hidden files:"
+                ls -a
+                ;;
+        2)
+                read -p "Enter the directory to delete: "dir
+                echo "Deleting directory '$dir' and its contents..."
+                rm -rf "$dir"
+                ;;
+        3)
+                read -p "Enter the source file: "source
+                read -p "Enter the destination: "destination
+                echo "Performing interactive copy..."
+                ;;
+        4)
+                read -p "Enter the file to delete: "file
+                echo "Performing interactive delete..."
+                rm -i "$file"
+                ;;
+        5)
+                echo "1 to rename of file"
+                echo "2 move a group of file to different directory"
+                read c
+                case $c in
+                        1)mv abc.txt pqr.txt;;
+                        2)mv pqr.txt abc.txt Desktop;;
+                        *)echo "invalid"
+                esac;;
+        *)
+                echo "Invalid choice, please select a valid option."
+                ;;
+
+esac
+
+                                                                                
