@@ -1,0 +1,5 @@
+echo "The last Modified file and in the Current Directory is : "
+ls -t | head -l
+
+echo "It's Modification Time is "
+ls -lt | sed -n '2p' | cut -c 52-57

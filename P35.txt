@@ -1,0 +1,55 @@
+echo "Select Any One to perform Task : "
+echo "1). Display All words of a file in Ascending Order"
+echo "2). Display a File in descending Order"
+echo "3). Toggle All The Characters in Files "
+echo "4). Display a Type of File"
+read -p "Please Enter your choice" choice
+case $choice in
+        1)
+                read -p "Enter file name " x
+                if [ -f $x ]
+                then
+                        echo "Here ALl words in Ascending order :  "
+                        sort $x
+                else
+                        echo "File Doesn't Exist !!"
+                fi
+                ;;
+        2)
+                read -p "Enter File name " x
+                if [ -f $x ]
+                then
+                        echo "Here a file in Descending Order : "
+                        echo ""
+                        sort -r $x
+                else
+                        echo "File Doesn't Exist !!"
+                fi
+                ;;
+        3)
+                read -p "Enter File Name : " x
+                if [ -f $x ]
+                then
+                        echo "Here Toggled All the Character in Files : "
+                        echo ""
+                        tr 'a-zA-Z' 'A-Za-z' < $x
+                else
+                        echo "File Doesn't Exist !!"
+                fi
+                ;;
+        4)
+                read -p "Enter File Name : " x
+                if [ -f $x ]
+                then
+                        echo "Here is type of [$x] File is : "
+                        echo ""
+                        stat $x
+                else
+                        echo "File Doesn't Exist !!"
+                fi
+                ;;
+        *)
+                echo "Invalid choice !!"
+
+esac
+

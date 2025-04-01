@@ -1,0 +1,21 @@
+read -p "Enter 1st file Name : " x
+read -p "Enter 2nd file Name : " y
+read -p "Enter 3rd file Name : " z
+
+if [ -f $x ] && [ -f $y ]
+then
+        echo "Both File [$x] and [$y] exists !!"
+
+        echo "Now, Combine the content of both file vertically : "
+        cat $x>$z
+        cat $y>>$z
+        cat $z
+        echo ""
+
+        echo "Now, Combine the content Horizontally : "
+        paste -d " " $x $y >> $z
+        cat $z
+else
+        echo "File Doesn't Exist !!"
+
+fi

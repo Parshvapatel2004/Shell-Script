@@ -1,0 +1,24 @@
+echo "Select how do you want to Display the calender : "
+echo "1). Display calender for specific two months"
+echo "2). Display calender for all the months between given 2 months"
+read -p "Please Select Choice : " choice
+case $choice in
+        1)
+                read -p "Enter 1st Month in (1-12) Format : " x
+                read -p "Enter 2nd Month in (1-12) Format : " y
+                echo ""
+                cal $x 2025 ; cal $y 2025
+                ;;
+        2)
+                read -p "Enter 1st Month in (1-12) Formate : " x
+                read -p "Enter 2nd Month in (1-12) Formate : " y
+                echo ""
+                for (( i = x; i <= y; i++ ))
+                do
+                        cal $i 2025
+                done
+                ;;
+        *)
+                echo "INVALID CHOICE"
+
+esac

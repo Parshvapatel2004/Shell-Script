@@ -1,0 +1,7 @@
+x=`date +%u`
+if [ $x -gt 5 ]
+then
+        echo "Today is a weekend !!"
+else
+        echo "Today is a not weekend !!"
+fi

@@ -1,0 +1,8 @@
+read -p "Enter file name to show it's Permission : " x
+if [ -f $x ]
+then
+        ls -l $x
+else
+        echo "File Doesn't Exist"
+
+fi

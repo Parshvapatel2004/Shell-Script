@@ -1,0 +1,27 @@
+echo "Select any option to perform operations "
+echo "1). To display list of home directory "
+echo "2). To display date"
+echo "3). To print working directory"
+echo "4). To display Users logged in "
+read -p "Enter Your choice : " choice
+case $choice in
+        1)
+                echo "List of home directory"
+                ls $HOME
+                ;;
+        2)
+                echo "Display Date"
+                date +%D
+                ;;
+        3)
+                echo "Print working directory"
+                pwd
+                ;;
+        4)
+                echo "Display Users Logged In "
+                whoami
+                ;;
+        *)
+                echo "Invalid choice"
+                ;;
+esac

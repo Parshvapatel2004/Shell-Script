@@ -1,0 +1,2 @@
+echo "Here are all the Hidden files in current directiory : "
+ls -a | grep "^\."

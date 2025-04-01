@@ -1,0 +1,10 @@
+read -p "Enter File Name : " x
+
+if [ -f $x ]
+then
+        echo "All the Space from the file is removed successfully !! "
+        cat $x | tr -d " " > $x
+        cat $x
+else
+        echo "File doesn't exist"
+fi
