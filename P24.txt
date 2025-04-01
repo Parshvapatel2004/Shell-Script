@@ -1,0 +1,12 @@
+read -p "Enter the First filename : " fn1
+read -p "Enter the second filename : " fn2
+cmp $fn1 $fn2
+c=`echo $?`
+
+if [ $c -eq 0 ]
+then
+        echo "Both files are same"
+        rm $fn2
+else
+        echo "Both files are not same"
+fi

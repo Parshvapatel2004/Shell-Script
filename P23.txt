@@ -1,0 +1,14 @@
+y="111"
+c="c"
+
+for i in *;
+do
+        if [ -f "$i" ]
+        then
+                if [[ "$i" == c* ]]
+               then
+                        mv "$i" "${i}${y}"
+                       echo "Renamed $i to ${i}${y}"
+                fi
+        fi
+done

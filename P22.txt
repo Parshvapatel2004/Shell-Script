@@ -1,0 +1,6 @@
+if [ "$l" = 0 ]
+then
+        ls -l home
+else
+        ls -l $l
+fi

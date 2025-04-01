@@ -1,0 +1,24 @@
+read -p "Enter directiory one : " d1
+read -p "Enter directiory second : " d2
+
+if [ -d $d1 -a -d $d2 ]
+then
+        if [ ! -d $d1 ]
+        then
+                echo "Error : source directory '$d1' does not exist"
+                exit 1
+        fi
+
+        if [ ! -d $d2 ]
+        then
+                echo "Destination directiory '$d2' does not exist.  creating it now... "
+                mkdir -p "$d2"
+        fi
+
+        echo "Copying files from '$d1' to '$d2'....."
+        cp -r "$d1"/* "$d2"/
+        echo "All Files are copied successfully "
+
+else
+        echo "Please enter Directory don't make smart"
+fi
