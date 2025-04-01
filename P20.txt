@@ -1,0 +1,54 @@
+echo "1). Concatenates Two strings."
+echo "2). Rename Files."
+echo "3). Deletes a file."
+echo "4). Copy the file to specific location."
+read -p "Enter your choice : " choice
+case $choice in
+        1)
+                read -p "Enter First String : " str1
+                read -p "Enter second String : " str2
+                result="$str1$str2"
+                echo "Concatenated string : $result"
+                ;;
+        2)
+                read -p "Enter the file to rename " oldfile
+                if [ -f $oldfile ];then
+                        read -p "Enter new name " newfile
+                        mv "$oldfile" "$newfile"
+                        echo "File renamed from '$oldfile' to '$newfile' "
+                else
+                        echo "File '$oldfile' not found "
+                fi
+                ;;
+        3)
+                read -p "Enter the file name you want to delete : " delfile
+                if [ -f $delfile ]
+                then
+                        rm "$delfile"
+                        echo "File "$delfile" is deleted "
+                else
+                        echo "File "$delfile" id not exist"
+                fi
+                ;;
+        4)
+                read -p "Enter the file to copy : " src_file
+                if [ -f "$src_file" ]; then
+                        read -p "Enter Destination Directory : " dest_dir
+                        if [ -d "$dest_dir" ]; then
+                        cp "$src_file" "$dest_dir"
+                        echo "File "$src_file" copied to "$dest_file"."
+                        echo "Here, "$src_file" is the source file , and '$dest_dir' is the target directory."
+                      else
+                        echo "Destination directory '$dest_dir' not found "
+                        fi
+                else
+                        echo "File '$src_file' not found"
+                fi
+                ;;
+        *)
+                echo "Invalid Choice"
+                ;;
+
+
+
+esac
