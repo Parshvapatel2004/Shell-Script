@@ -1,0 +1,2 @@
+read -p "Enter any character to list all the files starting with that charater : " x
+ls $x*

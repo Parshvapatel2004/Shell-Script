@@ -1,0 +1,6 @@
+echo "Total Number of Users : "
+cat /etc/passwd | wc -l
+
+echo "How Many of them are currently Logged in : "
+whoami
+whoami | wc -l

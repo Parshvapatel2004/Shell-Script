@@ -1,0 +1,20 @@
+read -p "Enter file name : " x
+if [ -f $x ]
+then
+        echo "Original File content of [$x] file : "
+        cat $x
+        echo ""
+
+
+        echo "Here the Toggle content of [$x] file is : "
+        tac $x
+        echo ""
+
+
+        echo "Here is the toggle characters of [$x] file is : "
+        tr 'a-zA-Z' 'A-Za-z' < $x
+        echo ""
+else
+        echo "File doesn't exist"
+fi
+

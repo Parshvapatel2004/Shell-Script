@@ -1,0 +1,8 @@
+read -p "Enter Directory Name to show it's information : " x
+
+if [ -d $x ]
+then
+        ls -l $x | awk 'NR>1 {print $10, $6, $7, $8, $9, $1, $3}'
+else
+        echo "[$x] Directory Doesn't Exist "
+fi

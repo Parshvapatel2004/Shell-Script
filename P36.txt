@@ -1,0 +1,8 @@
+read -p "Enter a name to check User is Logged in or Not : " x
+if whoami | grep -w "$x"
+then
+        echo "[$x] is currently Logged in !!"
+else
+        echo "[$x is Not Logged in !!]"
+fi
+

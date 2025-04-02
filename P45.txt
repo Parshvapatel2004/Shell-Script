@@ -1,0 +1,32 @@
+echo "Select Option : "
+echo "1). Display contents sorted by marks in descending order"
+echo "2). Display names of students in alphabetical order "
+echo "3). Display Students according to their roll numbers"
+echo "4). Sort file according to second field (name) and save it to 'names'"
+echo "5). Display students who scored between 70 and 80"
+read -p "Enter your choice : " ch
+case $ch in
+        1)
+                echo "Displaying contents sorted by markes in descending order : "
+                sort -t' ' -k3,3nr student.txt
+                ;;
+        2)
+                echo "Displaying names of students in alphabetical order (ignoring case) : "
+                cut -d' ' -f2 student.txt | sort -f
+                ;;
+        3)
+                echo "Displaying students accroding to their roll numbers : "
+                sort -n student.txt
+                ;;
+        4)
+                echo "Shorting file according to second field (name) and saving to 'names.txt' : "
+                sort -t' ' -k2,2 student.txt > names.txt
+                echo "Sorted file saved to names.txt"
+                ;;
+        5)
+                echo "Displaying students who scored between 70 and 80 : "
+                awk '$3 >= 70 && $3 <= 80' student.txt
+                ;;
+        *)
+                echo "Invaid option"
+esac

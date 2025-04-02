@@ -1,0 +1,8 @@
+FROM="Parshva@gmail.com"
+TO="ParshvaPatel@gmail.com"
+SUBJECT="Test Email"
+BODY="This is a test email sent from a shell script"
+
+echo "$BODY" | mail -s "$SUBJECT" -r "$FROM" "$TO"
+
+echo "Mail sent successfully"
